@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<script src="resources/variant-class.js"></script>
+<script src="support/variant-class.js"></script>
 <style>
-@font-face {
-  font-family: test-font;
-  src: url(resources/cap-x-height.ttf);
-}
+@import "support/AhemTestMetrics.css";
+
 .spacer {
   background: lightgray;
   block-size: 100px;
 }
 .target {
-  font-family: test-font;
-  font-size: 100px;
-  line-height: 2;
+  font: 100px/2 AhemTestMetrics;
 }
 .offset {
   position: relative;
 }
 .vrl { writing-mode: vertical-rl; }
 .vlr { writing-mode: vertical-lr; }
+
+.default .target { line-height: 150px; }
+.default .offset { inset-block-start: 25px; }
 .text .target { line-height: 150px; }
 .text .offset { inset-block-start: 25px; }
 .alphabetic .target { line-height: 130px; }
@@ -32,6 +31,6 @@
 </style>
 <div class="spacer"></div>
 <div class="target">
-  <span class="offset">A</span>
+  <span class="offset">ApÉx</span>
 </div>
 <div class="spacer"></div>

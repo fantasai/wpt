@@ -6,7 +6,11 @@
 
 <script>
 test_valid_value('text-box-trim', 'none');
-test_valid_value('text-box-trim', 'start');
-test_valid_value('text-box-trim', 'end');
-test_valid_value('text-box-trim', 'both');
+test_valid_value('text-box-trim', 'trim-start');
+test_valid_value('text-box-trim', 'trim-end');
+test_valid_value('text-box-trim', 'trim-both');
+
+test_invalid_value('text-box-trim', 'trim-start trim-end');
+text_invalid_value('text-box-trim', 'auto');
+text_invalid_value('text-box-trim', 'normal');
 </script>

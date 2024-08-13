@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<link rel="help" href="https://drafts.csswg.org/css-inline-3/#propdef-text-box-edge">
-<link rel="help" href="https://drafts.csswg.org/css-inline-3/#propdef-text-box-trim">
-<link rel="match" href="text-box-trim-text-emphasis-start-001-ref.html">
+<title>text-box-trim ignores emphasis marks</title>
+<link rel="help" href="https://drafts.csswg.org/css-inline-3/#text-box-trim">
+<link rel="help" href="https://www.w3.org/TR/css-text-decor/#emphasis-marks">
+<link rel="match" href="text-box-trim-text-emphasis-001-ref.html">
 <link rel="stylesheet" type="text/css" href="/fonts/ahem.css"/>
 <style>
 .spacer {
@@ -9,13 +10,18 @@
   background: lightgray;
 }
 .target {
-  font-family: Ahem;
-  font-size: 40px;
-  line-height: 1;
-  text-box-trim: start;
+  font: 40px/2 Ahem;
+  text-box-trim: trim-both;
   text-box-edge: text;
-  text-emphasis: dot transparent;
+}
+em {
+  text-emphasis: dot;
+  text-emphasis-position: over;
+}
+em + em {
+  text-emphasis-position: under;
 }
 </style>
 <div class="spacer"></div>
-<div class="target">It is important!</div>
+<div class="target"><span>super</span> <span>important</span></div>
+<div class="spacer"></div>
